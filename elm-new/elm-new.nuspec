@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements
+-->
+
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <id>elm-new</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <version>2.0.0</version>
+    <packageSourceUrl>https://github.com/simonewebdesign/elm-new</packageSourceUrl>
+    <owners>Simone Vittori</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>elm-new</title>
+    <authors>Simone Vittori</authors>
+    <projectUrl>https://github.com/simonewebdesign/elm-new</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/simonewebdesign/elm-new/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/simonewebdesign/elm-new</projectSourceUrl>
+    <docsUrl>https://github.com/simonewebdesign/elm-new/#elm-new</docsUrl>
+    <bugTrackerUrl>https://github.com/simonewebdesign/elm-new/issues</bugTrackerUrl>
+    <tags>elm-new starter boilerplate elm init cli</tags>
+    <summary>Generate a new Elm project from the command line</summary>
+    <description>With elm-new you can easily start a new Elm project from the command line. </description>
+    <releaseNotes>Supports Elm 0.19.1</releaseNotes>
+    <!-- =============================== -->
+
+    <!-- chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension
+         - You want to use Get-UninstallRegistryKey on less than 0.9.10 (in chocolateyUninstall.ps1)
+         - You want to use Get-PackageParameters and on less than 0.11.0
+         - You want to take advantage of other functions in the core community maintainer's team extension package
+    -->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
