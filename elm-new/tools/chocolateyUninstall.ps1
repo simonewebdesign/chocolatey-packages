@@ -1,5 +1,5 @@
 $installDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$pathToRemove = "$installDir\$env:ChocolateyPackageName-$env:chocolateyPackageVersion"
+$pathToRemove = "$installDir\$env:ChocolateyPackageName-$env:chocolateyPackageVersion-choco"
 
 foreach ($path in [Environment]::GetEnvironmentVariable("PATH", "User").split(';'))
 {
