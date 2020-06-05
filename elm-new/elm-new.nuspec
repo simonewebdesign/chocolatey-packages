@@ -17,7 +17,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <id>elm-new</id>
     <!-- version should MATCH as closely as possible with the underlying software -->
     <version>2.0.0</version>
-    <packageSourceUrl>https://github.com/simonewebdesign/elm-new</packageSourceUrl>
+    <packageSourceUrl>https://github.com/simonewebdesign/chocolatey-packages/tree/master/elm-new</packageSourceUrl>
     <owners>Simone Vittori</owners>
     <!-- ============================== -->
 
